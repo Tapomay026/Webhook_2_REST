@@ -6,6 +6,7 @@
 import logging
 from flask import Flask, request, jsonify
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -47,4 +48,8 @@ def handle_webhook():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+  # Get the port from the environment variables (Render will set this for you)
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if no PORT is provided
+
+    # Run the Flask app, bind to all network interfaces (0.0.0.0) and use the port from the environment
+    app.run(debug=False, host="0.0.0.0", port=port)

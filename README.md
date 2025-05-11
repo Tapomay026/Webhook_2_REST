@@ -12,14 +12,15 @@ This project is a simple Flask-based middleware that transforms incoming webhook
 
 ## 📦 JSON Request Format
 
-Endpoint: `POST /webhook_2_any_rest`
+Endpoint: POST ,
+          https://<the URL of the flask-app whereever you deploy>/webhook_2_any_rest
+          Replace `<the URL of the flask-app whereever you deploy>` with the actual URL where your Flask app is deployed (e.g., `https://webhook-2-rest.onrender.com`) when it is deployed on Render!!.
 
 ```json
 {
-  "httpverb": "GET/POST/PUT/DELETE", 
-  "endpoint": "THE RESOURCE YOU WANT TO ADDRESS",
-  "base_url": "BASE URL OF YOUR REST API",
+  "httpverb": "", 
+  "endpoint": "",
+  "base_url": "",
   "content": {
-    JSON with The Usual BODY that you would have used to carry out the respective REST activity!
   }
 }
